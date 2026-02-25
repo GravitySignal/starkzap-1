@@ -49,7 +49,7 @@
     "access": "public"
   },
   "scripts": {
-    "build": "tsc; tsc-alias",
+    "build": "tsc; tsc-alias --resolve-full-paths --resolve-full-extension .js",
     "typecheck": "tsc --noEmit",
     "lint": "eslint .",
     "fix": "eslint . --fix",
@@ -68,7 +68,7 @@
     "docs:api": "typedoc --options typedoc.json",
     "docs:export": "npm run docs:api && node scripts/docs-export.mjs",
     "docs:check": "npm run docs:api",
-    "prepare": "husky"
+    "prepare": "npm run build"
   },
   "devDependencies": {
     "@cartridge/controller": "^0.13.9",
